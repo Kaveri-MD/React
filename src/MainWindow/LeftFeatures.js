@@ -1,12 +1,15 @@
 import React from "react";
 import '../style.scss'
-// import {FontAwesomeIcon} from "@fortawesome/fontawesome-free"
-function leftFeatures(){
+import UserName from "./UserName";
+import NavBar from "./NavBar";
+
+function LeftFeatures(){
     return (
         <div className="leftFeatures">
-            {/* <FontAwesomeIcon icon={} />  */}
+            <UserName />
+            <NavBar />
         </div>       
     )    
 }
 
-export default  leftFeatures
+export default  LeftFeatures

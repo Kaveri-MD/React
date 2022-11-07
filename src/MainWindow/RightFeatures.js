@@ -1,7 +1,7 @@
 import React from "react";
 import '../style.scss'
 // import {FontAwesomeIcon} from "@fortawesome/fontawesome-free"
-function rightFeatures(){
+function RightFeatures(){
     return (
         <div className="rightFeatures">
             {/* <FontAwesomeIcon icon={} />  */}
@@ -9,4 +9,4 @@ function rightFeatures(){
     )    
 }
 
-export default  rightFeatures
+export default  RightFeatures

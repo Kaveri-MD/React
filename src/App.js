@@ -1,6 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import '../src/style.scss'
 import Header from './MainWindow/Header'
 import LeftFeatures from './MainWindow/LeftFeatures'
 import RightFeatures from './MainWindow/RightFeatures'
