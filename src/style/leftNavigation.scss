@@ -1,0 +1,105 @@
+
+.dissipate{
+    width: 25%;
+    // margin-top: 6px;
+    background-color: white;
+    position: fixed;
+    height: calc(100vh - 90px);
+    overflow-y: scroll;
+  
+
+}
+.left-navigation{
+    width: 25%;
+    // margin-top: 6px;
+    background-color: white;
+    position: fixed;
+    height: calc(100vh - 90px);
+    overflow-y: scroll;
+
+}
+img{
+    border-radius: 100%;
+    width: 50px;
+}
+.user-name{
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+}
+.user-name span{
+    margin-left: 20px;
+}
+
+.nav-bar a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+.icons{
+    font-size: 20px;
+    margin-left:40px;
+    // border: 2px solid;
+    width: 10%;
+}
+.text{
+    margin-left:10px;
+    // border: 2px solid;
+    width: 70%;
+}
+.number{
+    font-weight: lighter ;
+    margin-right: 20px;
+}
+// .navBar a:hover{
+//     background-color:#7a054f ;
+//     color: white;
+// }
+.nav-bar a:focus{
+    background-color:#7a054f ;
+    color: white;
+}
+.left-navigation button{
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+}
+.dissipate button{
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+}
+.primary-button{
+    padding: 10px 40px;
+}
+.primary-button b{
+    margin-right: 5px;
+}
+.updates{
+    padding: 10px;
+    margin-left: 25px;
+}
+.extra{
+    display: none;
+}
+
+@media screen and (max-width:426px) {
+    
+    .left-navigation{
+        position: absolute;
+        width: 70%;
+        right:0;
+        background-color: white;
+        z-index: 1;
+    }
+    .dissipate{
+        display: none;
+    }
+    
+   
+
+}

@@ -1,38 +1,45 @@
 import React from "react";
-import '../style.scss'
+import '../style/leftNavigation.scss'
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
-import { ListItem } from './ListItem'
+import { faAngleDown,faAngleUp } from '@fortawesome/free-solid-svg-icons'
 import { MenuItem } from './ListItem'
+import { ListItem } from './ListItem'
+import List from "./DisplayList";
 
-function NavBar(props) {
+
+function NavBar() {
+    const[state,setState]=useState(true)
+    const [button, setButton]=useState(true)
+    
     return (
-        <div className="navBar">
-            {/* {props.name}
-            {props.number} */}
+        <div className="nav-bar">
             <div>
-                {ListItem.map((item) => {
+                {(state?ListItem.slice(0,7):ListItem).map((list) => {
                     return (
-
-                        <a href={item.url}><span className="icons"><FontAwesomeIcon icon={item.icon} /></span><span className="text">{item.text}</span><span className="number">{item.number}</span></a>
-
+                        <List value={list}/>
                     )
                 })}
             </div>
-            <div className="buttons">
-                <button><b>See more</b><FontAwesomeIcon icon={faAngleDown} /></button>
+            
+            <div className="primary-button">
+                <button onClick={()=>setState(!state)}>
+                    <b>{state?'See more':'See less'}</b><FontAwesomeIcon icon={state?faAngleDown:faAngleUp} />
+                </button>
             </div>
+            <div className="updates"><b>Recently added:</b></div>
             <div>
-                {MenuItem.map((item) => {
+                {(button?MenuItem.slice(0,3):MenuItem).map((list) => {
                     return (
-
-                        <a href={item.url}><span className="icons"><FontAwesomeIcon icon={item.icon} /></span><span className="text">{item.text}</span><span className="number">{item.number}</span></a>
-
+                        <List value={list}/>
                     )
                 })}
             </div>
-            <div className="buttons">
-                <button><b>See more</b><FontAwesomeIcon icon={faAngleDown} /></button>
+
+            <div className="primary-button">
+                <button onClick={()=>setButton(!button)}>
+                    <b>{button?'See more':'See less'}</b><FontAwesomeIcon icon={button?faAngleDown:faAngleUp} />
+                </button>
             </div>
 
         </div>

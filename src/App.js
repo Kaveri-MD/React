@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import logo from './logo.svg';
-import './App.css';
-import '../src/style.scss'
+
+import '../src/style/style.scss'
 import Header from './MainWindow/Header'
-import LeftFeatures from './MainWindow/LeftFeatures'
-import RightFeatures from './MainWindow/RightFeatures'
+import LeftNavigation from './MainWindow/LeftNavigation'
+import RightNavigation from './MainWindow/RightNavigation'
 function App() {
+  const[display, setDisplay] = useState(false);
+  
     return (
       <div>
-        <Header />
+        <Header setDisplay={setDisplay}/>
         <div className='features'>
-          <LeftFeatures />
-          <RightFeatures />
+          <LeftNavigation display={display}  />
+          <RightNavigation setDisplay={setDisplay}/>
         </div>
       </div>
     );
