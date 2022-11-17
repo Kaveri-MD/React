@@ -1,14 +1,14 @@
 import React from "react";
 
-import '../style/leftNavigation.scss'
+import '../../styles/leftNavigation.scss'
 import UserName from "./UserName";
 import NavBar from "./NavBar";
 
 function LeftNavigation({display}){
     
     return (
-        <div className={display ? "left-navigation": "dissipate"}>
-            {console.log(display)}
+        <div className={display ? "responsive-view": "left-navigation"}>
+            {/* {console.log(display)} */}
             <UserName />
             <NavBar />
         </div>       

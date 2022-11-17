@@ -1,10 +1,10 @@
 import React from "react";
-import '../style/leftNavigation.scss'
+import '../../styles/leftNavigation.scss'
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleDown,faAngleUp } from '@fortawesome/free-solid-svg-icons'
-import { MenuItem } from './ListItem'
-import { ListItem } from './ListItem'
+import { MenuItem } from '../../lists/ListItem'
+import { ListItem } from '../../lists/ListItem'
 import List from "./DisplayList";
 
 
@@ -23,7 +23,7 @@ function NavBar() {
             </div>
             
             <div className="primary-button">
-                <button onClick={()=>setState(!state)}>
+                <button  onClick={()=>setState(!state)}>
                     <b>{state?'See more':'See less'}</b><FontAwesomeIcon icon={state?faAngleDown:faAngleUp} />
                 </button>
             </div>
@@ -41,6 +41,7 @@ function NavBar() {
                     <b>{button?'See more':'See less'}</b><FontAwesomeIcon icon={button?faAngleDown:faAngleUp} />
                 </button>
             </div>
+            {/* <Button isActive={button} onPress={setButton}/> */}
 
         </div>
 

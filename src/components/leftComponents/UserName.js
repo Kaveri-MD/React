@@ -1,6 +1,6 @@
 import React from "react";
-import '../style/leftNavigation.scss'
-import hasini from  './hasini.jpg'
+import '../../styles/leftNavigation.scss'
+import hasini from  '../../images/hasini.jpg'
 
 function UserName(){
     return(
