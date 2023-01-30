@@ -1,55 +1,50 @@
 .header {
-    position:fixed;
-    padding: 20px;
-    border-bottom: 1px solid #d9d9d9;
-    box-shadow: 0px 2px 8px   #b3b3b3;
-    display: flex;
-    justify-content: space-between;
-    top:0;
-    right:0;
-    left:0;
-    z-index: 2;
-    background-color: white;
-    
+  position: fixed;
+  padding: 20px;
+  border-bottom: 1px solid #d9d9d9;
+  box-shadow: 0px 2px 8px #b3b3b3;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  background-color: white;
+}
+.dashboard-header {
+  display: flex;
+  align-items: center;
+}
+.arrow-icon {
+  font-size: 28px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+.header span {
+  margin-left: 10px;
+}
+.dash-board {
+  padding-left: 50px;
+  color: #666666;
+}
+.bar-icon {
+  font-size: 25px;
+  display: none;
+}
+
+@media screen and (max-width: 426px) {
+  .header {
+    font-size: 14px;
   }
-.dashboard-header{
-    display: flex;
-    align-items: center;
-}
-.arrow-icon{
-    font-size: 28px;
-    padding-left: 10px;
-    cursor: pointer;
-}  
-.header span{
-    margin-left: 10px;
-}
-.dash-board{
-    padding-left: 50px;
-    color:	 #666666 ;
-}
-.bar-icon{
-    font-size: 25px;
-    display: none;
-}
+  .arrow-icon {
+    font-size: 20px;
+    padding-left: 0px;
+  }
+  .dash-board {
+    padding-left: 30px;
+  }
 
-@media screen and (max-width:426px) {
-    .header{
-        font-size: 14px;
-    }
-    .arrow-icon{
-        font-size: 20px;
-        padding-left: 0px;
-    }  
-    .dash-board{
-        padding-left: 30px;
-    }
-
-    .bar-icon{
-        display: block;
-        
-    }
-    
-
+  .bar-icon {
+    display: block;
+  }
 }
-

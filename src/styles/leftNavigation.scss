@@ -5,8 +5,9 @@
   position: fixed;
   height: calc(100vh - 90px);
   overflow-y: auto;
+  
 }
-::-webkit-scrollbar {
+.left-navigation::-webkit-scrollbar {
   display: none;
 }
 img {
@@ -22,13 +23,7 @@ img {
   margin-left: 20px;
 }
 
-// .nav-bar a {
-//   text-decoration: none;
-//   display: flex;
-//   align-items: center;
-//   padding: 5px;
-// }
-.display-list .default{
+.display-list .inactive {
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -38,35 +33,22 @@ img {
 .icons {
   font-size: 20px;
   margin-left: 40px;
-  // border: 2px solid;
   width: 10%;
 }
 .text {
   margin-left: 10px;
-  // border: 2px solid;
   width: 70%;
 }
 .number {
   font-weight: lighter;
   margin-right: 20px;
 }
-// .navBar a:hover{
-//     background-color:#7a054f ;
-//     color: white;
-// }
+
 .display-list .active {
   background-color: $my-color;
   color: white;
-  @extend .default;
+  @extend .inactive;
 }
-
-//  .display-list .default:focus  {
-//     background-color: #7a054f;
-//     color: white;
-//  }
-
- 
- 
 
 .left-navigation button {
   padding: 10px;
@@ -74,26 +56,26 @@ img {
   border-radius: 10px;
 }
 
-.primary-button {
+.secondary-button {
   padding: 8px 38px;
 }
-.primary-button button {
+.secondary-button button {
   border: 2px solid #f1f1f4;
   cursor: pointer;
 }
-.primary-button button:focus {
+.secondary-button button:focus {
   border-color: $my-color;
   background-color: #fee7f5;
 }
-.primary-button b {
+.secondary-button b {
   margin-right: 5px;
 }
-.updates {
+.recently-added {
   padding: 10px;
   margin-left: 25px;
 }
 
-.responsive-view{
+.responsive-view {
   @extend .left-navigation;
 }
 
@@ -117,7 +99,4 @@ img {
     width: 100%;
     border-radius: 10px;
   }
-  
 }
-
-

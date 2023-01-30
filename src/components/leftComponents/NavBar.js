@@ -1,51 +1,19 @@
 import React from "react";
-import '../../styles/leftNavigation.scss'
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faAngleDown,faAngleUp } from '@fortawesome/free-solid-svg-icons'
-import { MenuItem } from '../../lists/ListItem'
-import { ListItem } from '../../lists/ListItem'
-import List from "./DisplayList";
-
+import "../../styles/leftNavigation.scss";
+import { MenuItem } from "../../lists/ListItem";
+import { ListItem } from "../../lists/ListItem";
+import NavbarContent from "./NavbarContent";
 
 function NavBar() {
-    const[state,setState]=useState(true)
-    const [button, setButton]=useState(true)
-    
-    return (
-        <div className="nav-bar">
-            <div>
-                {(state?ListItem.slice(0,7):ListItem).map((list) => {
-                    return (
-                        <List value={list}/>
-                    )
-                })}
-            </div>
-            
-            <div className="primary-button">
-                <button  onClick={()=>setState(!state)}>
-                    <b>{state?'See more':'See less'}</b><FontAwesomeIcon icon={state?faAngleDown:faAngleUp} />
-                </button>
-            </div>
-            <div className="updates"><b>Recently added:</b></div>
-            <div>
-                {(button?MenuItem.slice(0,3):MenuItem).map((list) => {
-                    return (
-                        <List value={list}/>
-                    )
-                })}
-            </div>
 
-            <div className="primary-button">
-                <button onClick={()=>setButton(!button)}>
-                    <b>{button?'See more':'See less'}</b><FontAwesomeIcon icon={button?faAngleDown:faAngleUp} />
-                </button>
-            </div>
-            {/* <Button isActive={button} onPress={setButton}/> */}
-
-        </div>
-
-
-    )
+  return (
+    <div>
+      <NavbarContent listContent={ListItem} limit={7}/>
+      <div className="recently-added">
+        <b>Recently added:</b>
+      </div>  
+      <NavbarContent  listContent={MenuItem} limit={3}/>
+    </div>
+  );
 }
-export default NavBar
+export default NavBar;

@@ -8,13 +8,12 @@ import {
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Header({change}) {
-function handleClick(){
- change();
-}
-function timer(){
-  setTimeout(()=>{handleClick();},400)
-}
+function Header({ view }) {
+  function iconClick() {
+    view();
+  }
+
+  
   return (
     <div className="header">
       <div className="dashboard-header">
@@ -29,7 +28,7 @@ function timer(){
           <b>Social Feed</b>
         </span>
       </div>
-      <div className="bar-icon"  onClick={timer} >
+      <div className="bar-icon" onClick={iconClick}>
         <span>
           <FontAwesomeIcon icon={faBars} />
         </span>
@@ -39,5 +38,3 @@ function timer(){
 }
 
 export default Header;
-
-// onClick={change}

@@ -1,16 +1,16 @@
 import React from "react";
 import { useState } from "react";
+import moment from "moment"
 import "../../styles/rightNavigation.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
-function DisplayCard(content) {
-  const isDelete = () => {
-    content.ondelete(content.id);
-  };
+import { faEllipsis, faTrash } from "@fortawesome/free-solid-svg-icons";
+function DisplayCard(props) {
+  const content= props.content;
+  const deleteFeed=props.deleteFeed;
 
   const [ellipsis, setEllipsis] = useState(true);
   return (
-    <div className="post-transmitter">
+    <div className="user-input">
       <div className="display-content">
         <img src={content.image} alt="profile"></img>
         <div className="username-content">
@@ -19,7 +19,7 @@ function DisplayCard(content) {
               <b>{content.name}</b>
             </div>
             <div className="role">{content.role}</div>
-            <div className="time">{content.time}</div>
+            <div className="time">{moment(content.time).fromNow()}</div>
           </span>
           <div className="ellipsis">
             <div
@@ -30,15 +30,18 @@ function DisplayCard(content) {
               <FontAwesomeIcon icon={faEllipsis} />
               <div
                 className={ellipsis ? "hide-options" : "view-options"}
-                onClick={isDelete}
+                onClick={()=>deleteFeed(content.id)}
               >
-                Delete
+                Delete <FontAwesomeIcon icon={faTrash} className="trash-icon" />
               </div>
             </div>
           </div>
         </div>
       </div>
-      {content.feed}
+      <div className="content-feed">
+      {content.feedInput}
+      </div>
+      
     </div>
   );
 }
