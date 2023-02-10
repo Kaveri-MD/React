@@ -1,0 +1,136 @@
+@import "./cssVariables.scss";
+.right-features {
+  width: 75%;
+  background-color: #e2e1e8;
+  position: absolute;
+  right: 0;
+  overflow-y: auto;
+  height: calc(100vh - 76px);
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: $my-color; 
+}
+.text-area::-webkit-scrollbar {
+  width: 5px;
+}
+
+.user-input {
+  margin: 20px 150px;
+  border-radius: 15px;
+
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 2px 8px #b3b3b3;
+}
+img {
+  border-radius: 100%;
+  width: 50px;
+}
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile .text-area {
+  background-color: #f1f1f4;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 20px;
+  resize: none;
+  border: 2px solid #f1f1f4;
+
+  margin-left: 15px;
+  font-size: 14px;
+}
+.profile .text-area:focus {
+  outline: none;
+  border-color: $my-color;
+  background-color: #fee7f5;
+}
+.attachments {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 70px;
+}
+.attachments div {
+  cursor: pointer;
+}
+.attachments div:hover {
+  color: $my-color;
+}
+.attachments div:focus {
+  color: $my-color;
+}
+.user-input span {
+  margin-left: 5px;
+}
+.display-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.display-content span {
+  display: block;
+  margin-left: 10px;
+}
+.username-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.role {
+  color: #404040;
+}
+.ellipsis {
+  cursor: pointer;
+  display: block;
+  text-align: right;
+}
+.hide-options {
+  display: none;
+}
+.view-options {
+  display: block;
+  text-align: right;
+  // border-style:solid;
+}
+.time {
+  color: #666666;
+  font-size: 14px;
+}
+.send-icon {
+  font-size: 25px;
+  margin-left: 10px;
+  color: $my-color;
+  cursor: pointer;
+}
+.content-feed{
+  word-break: break-word;
+}
+.view-options:hover{
+  color: black;
+  .trash-icon{
+    color:#b30000;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .right-features {
+    width: 100%;
+  }
+  .user-input {
+    margin: 20px 10px;
+  }
+  .attachments {
+    font-size: 14px;
+  }
+}

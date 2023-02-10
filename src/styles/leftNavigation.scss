@@ -1,0 +1,102 @@
+@import "./cssVariables.scss";
+.left-navigation {
+  width: 25%;
+  background-color: white;
+  position: fixed;
+  height: calc(100vh - 90px);
+  overflow-y: auto;
+  
+}
+.left-navigation::-webkit-scrollbar {
+  display: none;
+}
+img {
+  border-radius: 100%;
+  width: 50px;
+}
+.user-name {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+}
+.user-name span {
+  margin-left: 20px;
+}
+
+.display-list .inactive {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  color: black;
+}
+.icons {
+  font-size: 20px;
+  margin-left: 40px;
+  width: 10%;
+}
+.text {
+  margin-left: 10px;
+  width: 70%;
+}
+.number {
+  font-weight: lighter;
+  margin-right: 20px;
+}
+
+.display-list .active {
+  background-color: $my-color;
+  color: white;
+  @extend .inactive;
+}
+
+.left-navigation button {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.secondary-button {
+  padding: 8px 38px;
+}
+.secondary-button button {
+  border: 2px solid #f1f1f4;
+  cursor: pointer;
+}
+.secondary-button button:focus {
+  border-color: $my-color;
+  background-color: #fee7f5;
+}
+.secondary-button b {
+  margin-right: 5px;
+}
+.recently-added {
+  padding: 10px;
+  margin-left: 25px;
+}
+
+.responsive-view {
+  @extend .left-navigation;
+}
+
+@media screen and (max-width: 426px) {
+  .left-navigation {
+    display: none;
+  }
+  .responsive-view {
+    display: block;
+    position: fixed;
+    width: 70%;
+    right: 0;
+    background-color: white;
+    z-index: 1;
+    overflow-y: auto;
+    height: calc(100vh - 90px);
+  }
+
+  .responsive-view button {
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+  }
+}
