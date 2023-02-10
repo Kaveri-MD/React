@@ -13,13 +13,31 @@ function App() {
   const view = () => {
     setDisplay(!display);
   };
+
+  // <Routes>
+  //       <Route path="/month" element={<MainCalendar />} />
+
+  //       <Route path="/" element={<DisplayTime />} />
+  //     </Routes>
  
     return (
         <div>
         <Header />
         <div className='features'>
           <LeftNavigation />
-          <RightNavigation />
+          <Routes>
+          <Route path="/" element={<RightNavigation />} />
+          {
+          ListItem.map((item)=>{
+            return <Route path={item.url} element={<PageNavigation/>}/>
+          })
+          }
+          {
+          MenuItem.map((item)=>{
+            return <Route path={item.url} element={<PageNavigation/>}/>
+          })
+          }
+          </Routes>
         </div>
       </div>
     )
